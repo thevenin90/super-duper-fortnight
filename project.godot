@@ -8,9 +8,44 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "AudioStreamPlayer",
+"class": "AudioStreamPlayerADSR",
+"language": "GDScript",
+"path": "res://gmidi/addons/midi/ADSR.gd"
+}, {
+"base": "Reference",
+"class": "Bank",
+"language": "GDScript",
+"path": "res://gmidi/addons/midi/Bank.gd"
+}, {
+"base": "Node",
+"class": "MidiPlayer",
+"language": "GDScript",
+"path": "res://gmidi/addons/midi/MidiPlayer.gd"
+}, {
+"base": "Reference",
+"class": "SMF",
+"language": "GDScript",
+"path": "res://gmidi/addons/midi/SMF.gd"
+}, {
+"base": "Reference",
+"class": "SoundFont",
+"language": "GDScript",
+"path": "res://gmidi/addons/midi/SoundFont.gd"
+} ]
+_global_script_class_icons={
+"AudioStreamPlayerADSR": "",
+"Bank": "",
+"MidiPlayer": "res://gmidi/addons/midi/icon.png",
+"SMF": "",
+"SoundFont": ""
+}
+
 [application]
 
 config/name="super-duper-fortnight"
+run/main_scene="res://Title.tscn"
 config/icon="res://icon.png"
 
 [gui]

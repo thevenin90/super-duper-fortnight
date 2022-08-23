@@ -1,0 +1,97 @@
+Verse A MINOR (1 jumps
+Chorus A MINOR (1 jumps
+Bridge A MINOR (1 jumps
+Solo A MINOR (1 jumps
+Seed: -1439839938834541242
+Signature: A
+Scale: MINOR
+Tempo: 64
+Random Instruments: true
+Random Drums: true
+Random Drumspattern: true
+Random Scale: true
+Extend: false
+No Chords: false
+Chordbased melody: false
+EmbellishChance: 5
+SilenceChance: 15
+FX track: false
+Pad tracks: false
+Chord separation tracks: false
+NumBars: 4
+Notes per chord: 1
+Chordlength: 4
+PianoFlam: true
+Chord Inversions: true
+Sevenths: false
+Sus2/4: true
+Add9: false
+SONG TYPE: BREAKDOWN_BUILDUP_DROP
+VERSE: [6, 4, 1, 5]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 4, 1]
+BREAKDOWN 1/2: [6, 7, 1, 7]
+BREAKDOWN 2/2: [6, 7, 5, 1]
+BUILDUP: [7, 1, 7, 6]
+DROP: [4, 1, 5, 6]
+BREAKDOWN 1/2: [6, 7, 1, 7]
+BREAKDOWN 2/2: [6, 7, 5, 1]
+BUILDUP: [7, 1, 7, 6]
+DROP: [4, 1, 5, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [6, 4, 5, 1]
+Channel 0 instrument: Electric Piano 1
+Channel 1 instrument: Timpani
+Channel 2 instrument: Trumpet
+Channel 3 instrument: Harpsichord
+Channel 4 instrument: Church Organ
+Channel 5 instrument: Tuba
+Channel 6 instrument: Alto Sax
+Channel 7 instrument: Pan Flute
+Channel 8 instrument: Acoustic Bass
+Channel 10 instrument: Music Box
+Channel 11 instrument: Synth Voice
+Channel 12 instrument: Lead 5 (charang)
+Channel 13 instrument: Pad 8 (sweep)
+Channel 14 instrument: FX 4 (atmosphere)
+Channel 9 drum: Bass Drum 1
+Channel 9 drum: Snare Drum 1
+Channel 9 drum: Low Tom 1
+Channel 9 drum: Closed Hi-hat
+
+Scale notes: A,B,C,D,E,F,G,
+Bass distinct notes: A,B,C,D,E,F,G (7 notes)
+Chord Top distinct notes: C,D (2 notes)
+Chord third distinct notes: A,B (2 notes)
+Bass Drum distinct notes: F (1 notes)
+Snares distinct notes: A (1 notes)
+Toms distinct notes: E (1 notes)
+Chord root distinct notes: F,G (2 notes)
+Keys Alt distinct notes: A,B,C,D,E,F,G (7 notes)
+Arpeggios distinct notes: A,D,E,F,G (5 notes)
+Melody distinct notes: A,D,E,F,G (5 notes)
+Keys distinct notes: A,B,C,D,E,F,G (7 notes)
+Counter Melody distinct notes: A,D,E,F,G (5 notes)
+Hats distinct notes: Bb (1 notes)
+Riser distinct notes: Bb,C#,Ab,A,B,C,D,E,F,G,Eb,F# (12 notes)
+PART Melody: 648.0
+PART Counter Melody: 648.0
+PART Arpeggios: 648.0
+PART Keys: 648.0
+PART Keys Alt: 648.0000000000001
+PART Chord Top: 647.9999999999997
+PART Chord third: 647.9999999999997
+PART Chord root: 647.9999999999997
+PART Bass: 648.0
+PART Bass Drum: 648.0
+PART Snares: 648.0
+PART Toms: 648.0
+PART Hats: 648.0
+PART FX: 648.0
+PART Scale Top: 648.0
+PART Scale Third: 648.0
+PART Scale Root: 648.0
+PART Riser: 648.0000000000002

@@ -1,0 +1,103 @@
+Not switching scale for mode PHRYGIAN
+Not switching scale for mode PHRYGIAN
+Not switching scale for mode PHRYGIAN
+Not switching scale for mode PHRYGIAN
+Not switching scale for mode PHRYGIAN
+Not switching scale for mode PHRYGIAN
+Verse E PHRYGIAN (1 jumps
+Chorus E PHRYGIAN (1 jumps
+Bridge E PHRYGIAN (1 jumps
+Solo E PHRYGIAN (1 jumps
+Seed: -1439839938834541242
+Signature: E
+Scale: PHRYGIAN
+Tempo: 64
+Random Instruments: true
+Random Drums: true
+Random Drumspattern: true
+Random Scale: true
+Extend: false
+No Chords: false
+Chordbased melody: false
+EmbellishChance: 5
+SilenceChance: 15
+FX track: false
+Pad tracks: false
+Chord separation tracks: false
+NumBars: 4
+Notes per chord: 1
+Chordlength: 4
+PianoFlam: true
+Chord Inversions: true
+Sevenths: false
+Sus2/4: true
+Add9: false
+SONG TYPE: BREAKDOWN_BUILDUP_DROP
+VERSE: [6, 4, 1, 5]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 5, 1]
+BREAKDOWN 1/2: [6, 7, 1, 7]
+BREAKDOWN 2/2: [6, 7, 4, 1]
+BUILDUP: [7, 1, 7, 6]
+DROP: [4, 1, 5, 6]
+BREAKDOWN 1/2: [6, 7, 1, 7]
+BREAKDOWN 2/2: [6, 7, 4, 1]
+BUILDUP: [7, 1, 7, 6]
+DROP: [4, 1, 5, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [7, 1, 7, 6]
+VERSE: [6, 4, 4, 1]
+Channel 0 instrument: Electric Piano 2
+Channel 1 instrument: Viola
+Channel 2 instrument: French Horn
+Channel 3 instrument: Electric Grand Piano
+Channel 4 instrument: Rock Organ
+Channel 5 instrument: Trumpet
+Channel 6 instrument: Bassoon
+Channel 7 instrument: Flute
+Channel 8 instrument: Acoustic Bass
+Channel 10 instrument: Glockenspiel
+Channel 11 instrument: Synth Strings 1
+Channel 12 instrument: Lead 1 (square)
+Channel 13 instrument: Pad 2 (warm)
+Channel 14 instrument: FX 4 (atmosphere)
+Channel 9 drum: Bass Drum 1
+Channel 9 drum: Snare Drum 1
+Channel 9 drum: Low Tom 1
+Channel 9 drum: Closed Hi-hat
+
+Scale notes: E,F,G,A,B,C,D,
+Bass distinct notes: A,B,C,D,E,F,G (7 notes)
+Chord Top distinct notes: A,B,C,G (4 notes)
+Chord third distinct notes: E,F,G (3 notes)
+Bass Drum distinct notes: F# (1 notes)
+Snares distinct notes: F (1 notes)
+Toms distinct notes: E (1 notes)
+Chord root distinct notes: B,C,D,E (4 notes)
+Keys Alt distinct notes: A,B,C,D,E,F,G (7 notes)
+Arpeggios distinct notes: A,B,C,D,E (5 notes)
+Melody distinct notes: A,B,C,D,E (5 notes)
+Keys distinct notes: A,B,C,D,E,F,G (7 notes)
+Counter Melody distinct notes: D (1 notes)
+Hats distinct notes: D (1 notes)
+Riser distinct notes: Bb,C#,Ab,A,B,C,D,E,F,G,F#,Eb (12 notes)
+PART Melody: 648.0
+PART Counter Melody: 648.0
+PART Arpeggios: 648.0
+PART Keys: 648.0000000000001
+PART Keys Alt: 647.9999999999995
+PART Chord Top: 647.9999999999995
+PART Chord third: 647.9999999999995
+PART Chord root: 647.9999999999995
+PART Bass: 648.0
+PART Bass Drum: 648.0
+PART Snares: 648.0
+PART Toms: 648.0
+PART Hats: 648.0
+PART FX: 648.0
+PART Scale Top: 648.0
+PART Scale Third: 648.0
+PART Scale Root: 648.0
+PART Riser: 648.0000000000001
