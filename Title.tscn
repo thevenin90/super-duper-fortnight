@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gmidi/addons/midi/MidiPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Title.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Exec/execRunning.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Textures/PoorGrass.png" type="Texture" id=4]
+[ext_resource path="res://themeTitleText.tres" type="Theme" id=5]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="PoorGrass" type="Sprite" parent="."]
+position = Vector2( 512, 320 )
+scale = Vector2( 4, 3 )
+texture = ExtResource( 4 )
+
+[node name="MidiPlayer" type="Node" parent="."]
+script = ExtResource( 1 )
+file = "res://Music/Straight Practice/Assured Alert in B LOCRIAN (64bpm) [-1439839938834541242].mid"
+playing = true
+volume_db = -15.0
+soundfont = "res://Music/AegeanSymphonicOrchestra-SND/AegeanSymphonicOrchestra-SND.sf2"
+
+[node name="spriteLoading" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 320 )
+scale = Vector2( 10, 10 )
+frames = ExtResource( 3 )
+frame = 9
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_right = 256.0
+margin_bottom = 24.0
+rect_scale = Vector2( 4, 4 )
+theme = ExtResource( 5 )
+text = "Supper Dupper Fart Noot"
+align = 1
+
+[node name="btnStart" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 128.0
+margin_right = 272.0
+margin_bottom = 192.0
+text = "Start"
+
+[node name="btnContinue" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 256.0
+margin_right = 272.0
+margin_bottom = 320.0
+text = "Continue"
+
+[node name="btnExit" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 512.0
+margin_right = 272.0
+margin_bottom = 576.0
+theme = ExtResource( 5 )
+text = "EXIT"
