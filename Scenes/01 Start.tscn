@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Textures/PoorGrass.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PoorGrass" type="Sprite" parent="."]
+position = Vector2( 519.5, 319.5 )
+scale = Vector2( 4.10547, 2.56641 )
+texture = ExtResource( 1 )
