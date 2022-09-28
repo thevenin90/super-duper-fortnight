@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://gmidi/addons/midi/MidiPlayer.gd" type="Script" id=1]
+[ext_resource path="res://addons/midi/MidiPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Title.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Exec/execRunning.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Textures/PoorGrass.png" type="Texture" id=4]
 [ext_resource path="res://themeTitleText.tres" type="Theme" id=5]
+[ext_resource path="res://Title_btnStart.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -25,7 +26,7 @@ soundfont = "res://Music/AegeanSymphonicOrchestra-SND/AegeanSymphonicOrchestra-S
 position = Vector2( 512, 320 )
 scale = Vector2( 10, 10 )
 frames = ExtResource( 3 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Label" type="Label" parent="."]
@@ -42,6 +43,7 @@ margin_top = 128.0
 margin_right = 272.0
 margin_bottom = 192.0
 text = "Start"
+script = ExtResource( 6 )
 
 [node name="btnContinue" type="Button" parent="."]
 margin_left = 16.0

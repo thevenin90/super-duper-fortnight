@@ -1,0 +1,93 @@
+Aegean Symphonic Orchestra License: https://sites.google.com/view/hed-sounds/hed-sounds
+All samples Based on VPO2.sfz : http://virtualplaying.com/virtual-playing-orchestra/ 
+Drums and Percussion: SGM soundfont. http://www.geocities.jp/shansoundfont/ License: Just Give Credit.
+
+ASO: __You DO NOT have permission to sell, or repackage and sell this library in part or in whole .__
+https://sites.google.com/view/hed-sounds/hed-sounds
+
+
+Here is Original License of VPO2:
+VPO2: Licensing
+VPO2: If you're using this free orchestral sample library to make music, then licensing is easy. You can do whatever you want with the music you make, even sell it commercially.
+VPO2: If you want to modify, repackage or redistribute the library, licensing is a little complicated since different licenses apply to different parts of the library (see the source sfz files and see below) but generally, you can safely copy, redistribute, modify whatever you want provided appropriate credit is given to creators of the content used or at the very least, link back to my site which gives credit to the creators of the various content of this sample library.
+VPO2: Here are the licenses for the individual libraries that were used as source material
+VPO2: 
+VPO2: Sonatina Symphonic Orchestra http://sso.mattiaswestlund.net/
+VPO2: Creative Commons Sampling Plus 1.0 license.
+VPO2: 
+VPO2: Mattias Westlund additional samples http://mattiaswestlund.net/samples/ 
+VPO2: Creative Commons Attribution-ShareAlike 3.0 Unported license
+VPO2: 
+VPO2: No Budget Orchestra https://nobudgetorchestra.net/
+VPO2: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+VPO2: 
+VPO2: VSCO 2 Community Edition http://vis.versilstudios.net/vsco-2.html
+VPO2: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication License
+VPO2: 
+VPO2: University of Iowa Electronic Music http://theremin.music.uiowa.edu/
+VPO2: "freely available"
+VPO2: 
+VPO2: Philharmonia Orchestra http://www.philharmonia.co.uk/explore/make_music
+VPO2: Creative Commons Attribution-ShareAlike 3.0 Unported License
+VPO2: 
+VPO2: * Special Note: for anyone concerned about licensing of Philharmonia Orchestra samples, note the following clause in the Creative Commons License:
+VPO2: 
+VPO2: "No additional restrictions ? You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."
+VPO2: 
+VPO2: Which means this statement from the Philharmonia web site:
+VPO2: 
+VPO2: "The only restriction is they must not be sold or made available 'as is' (i.e. as samples or as a sampler instrument)."
+VPO2: 
+VPO2: ... is nullified by their use of the Creative Commons License, although I'd argue that I'm not giving away any Philharmonia Orchestra content as samples nor as a sampler instrument. I'm given them away as part of an orchestral sample library and I've processed all the samples anyway so they're not being given away "as is".
+
+SIG-EX: Looped Sonatina Symphonic Orchestra Instruments
+SIG-EX: ===============================================
+SIG-EX: 
+SIG-EX: Looped by Signal Experiments
+SIG-EX: sig-ex.com
+SIG-EX: 2017
+SIG-EX: 
+SIG-EX: Samples from SSO 1.0
+SIG-EX: Mattias Westlund
+SIG-EX: mattiaswestlund.net 
+SIG-EX: 
+SIG-EX: 
+SIG-EX: LICENSING
+SIG-EX: CC Sampling Plus 1.0 License
+SIG-EX: http://creativecommons.org/licenses/sampling+/1.0/
+SIG-EX: (Same as SSO 1.0 for maximum compatibility)
+SIG-EX: 
+SIG-EX: SUMMARY
+SIG-EX: * These sfz sample library consist of looped versions of sustaining instruments from SSO 1.0.
+SIG-EX: * This is meant to be an update or patch to SSO 1.0.
+SIG-EX: * Only wav samples that have been looped and new SFZ scripts are contained in this distribution.
+SIG-EX: * It is necessary to have SSO 1.0 present to have the complete orchestral library.
+SIG-EX: * No attempts are made to change the sound, beyond looping and minor SFZ tweaks.
+SIG-EX: * No attempts are made to include or mix samples that are outside of SSO 1.0.
+SIG-EX: 
+SIG-EX: 
+SIG-EX: USAGE
+SIG-EX: * The files are meant to be placed in the original "Sonatina Symphonic Orchestra" folder.
+SIG-EX: * The files include new sfz scripts and a folder called "Samples-looped" that contains the looped wav samples.
+SIG-EX: * The modified SFZ scripts rely on SSO 1.0's folder and file naming structure to be in their original state.
+SIG-EX: * A compliant SFZ player like Plogue sforzando, the Aria Player, the Linux Sampler or some Cakewalk products, is recommended.
+SIG-EX: 
+SIG-EX: 
+SIG-EX: CAUTION
+SIG-EX: There is an unlikely possibility that you have modified your copy of the SSO 1.0 sample library and ended up with filenames identical to the ones in this distribution.  Please perform necessary procedures to avoid loss of your files.
+SIG-EX: 
+SIG-EX: 
+SIG-EX: For more details and up-to-date information, feel free to visit:
+SIG-EX: www.sig-ex.com
+
+
+Salamander C5
+SAL: Creative Commons Attribution 3.0 license.
+SAL: Original samples here: https://rytmenpinne.wordpress.com/sounds-and-such/salamander-grandpiano/
+SAL: free for personal use and open source software & applications 
+SAL: nonCommercial
+
+Gongs:
+ZMDC: My samples...
+ZMDC: free for personal use and open source software & applications 
+ZMDC: nonCommercial
