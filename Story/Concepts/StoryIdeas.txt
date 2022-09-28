@@ -1,0 +1,33 @@
+Plot Ideas:
+(some of these names are randomly generated placeholders)
+
+"Blast Mark" (working title)
+Humerous futuristic semi-cyberpunk world where murder was legalized, but only for religious purposes.
+Therefore, general businesses start reclassifying as religions to fight the competion.  Big global businesses down to mom-and-pop shops.
+However, they need to keep their religion 'convincing' to keep the classification.
+
+"Fire"
+A 'princess trainer' style game.
+Nerdy chubby girl decides to lose weight and get in shape.  Player picks the exercises, the schedule, etc and plays minigames to determine the effectiveness.  MC's model changes over time based on the exercises.  Game takes place over several years while their friend falls in with the occult.  At the end, they need to use their acquired physicallity to defeat an evil summoned dragon.
+(You see "fire" can be metaphorical and also dragonical.  I am very smart.)
+
+"Salt Tissue" (working title)
+Fan-servicy fantasy turn based strategy.
+Instead of using squares or hexes, it uses triangles for spaces.
+Men are stronger (duh) but weaker at magic.  Women are weaker but stronger at magic.  A device is invented where someone can wear a pendant with a bit of blood from a family member of the opposite sex, granting them their "power", filling in the gap.  Also, the more armor you wear, the weaker your defense to magic.  The less armor, the weaker to physical attacks.
+
+"DaveLand - Bronze Age" (working title)
+This is a game idea I started working on back in High School, hence the awesome name.  First part in a three part series.
+A young man from a shamanic tribe develops visions of the future.  He sets off to gather a group of spunky adventurers to decipher their meaning and make plans to !!!Save the WORLD!!!
+
+"The Nail"
+Abso-fuckingly-immense randomly generated universe.  Player starts out in the room with "the nail".  A nailhalf-driven into a floating block of wood.  At first, the player has only one action, probably move left or something.  Doing any action grants exp. As they gain exp, they slowly gain other abilities.  I mean very fine-level.  They learn to move left, then right, then up, then down, then pause... etc.  As they go, the gain access to a metric crap-ton of mechanics.  This lets them travel to even further nodes, then across dimensions, universes, phases, affinities, aspects, etc.  Basically, each different property can be represented by a full integer variable.  Meaning there's some like quadrillions of zones.
+
+"Cord Domestic" (working title)
+Not as large as "the nail".  A large world map.  MAny different playable races including humans, spiders, T-Rexians, sentient sandwiches (yes, I liked that idea from my dnd game), etc.  The map and it's history is randomly generated, with an empahsis on story and history and puzzles over raw combat.  The closer to a city or a road, the easier it is.  As you venture further, it get's more challenging.  The player finds clues to these randomly generated mysteries and tries to solve them.  Though some simpler ones can be more combat focused.  The point is to focus on RP-style skills: cartography, survival skills, astronomy, cryptography, etc.  Maybe eventually makign thsi an MMO.
+
+'Some out of copyright story, but steam punk'
+Exactly what it means.  Take some old story, and steam punk it.  I was thinking maybe Lovecraft, Titus Andronicus - Shakespeare, Treasure Island, Zorro, etc...
+
+"Manticore" (working Title)
+The PC is cast into some underground dungeon.  In trying to escape she has to explore the dungeon and fight a number of bosses.  If doen correctly, she uses supernatural bullshit to mind control the bosses.  Once they are controlled, they join the party and try to help her escape.  If she takes too much damage, she can devour one.  Twist: she's some sort of evil creature and was thrown into the labyrinth as a punishment.  The dungeon is randomly generated and each run has different bosses.  Each boss has skills that may or may not synergize with others.  The player needs to choose what bosses to control or kill in anticipation of the challenges to come.  At the end, she losed the mind control because 'reasons' and has to fight through the remaining bosses again to escape.  
