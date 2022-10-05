@@ -88,6 +88,11 @@ _global_script_classes=[ {
 "class": "SoundFont",
 "language": "GDScript",
 "path": "res://addons/midi/SoundFont.gd"
+}, {
+"base": "Node",
+"class": "StatBlock",
+"language": "GDScript",
+"path": "res://Scripts/StatBlock.gd"
 } ]
 _global_script_class_icons={
 "AudioStreamPlayerADSR": "",
@@ -105,7 +110,8 @@ _global_script_class_icons={
 "HistoryRow": "",
 "MidiPlayer": "res://addons/midi/icon.png",
 "SMF": "",
-"SoundFont": ""
+"SoundFont": "",
+"StatBlock": "res://Scripts/Icon_statBlock.bmp"
 }
 
 [application]

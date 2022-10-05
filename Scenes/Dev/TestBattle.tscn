@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Sprites/Exec/execRunning.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/StatBlock.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Magie/Magie.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Background/Bloody.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 32.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bloody" type="Sprite" parent="."]
+position = Vector2( 529, 348.5 )
+scale = Vector2( 1.74688, 1.50625 )
+texture = ExtResource( 4 )
+
+[node name="Combatant1" type="Node2D" parent="."]
+position = Vector2( 200, 300 )
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Combatant1"]
+scale = Vector2( 10, 10 )
+frames = ExtResource( 1 )
+playing = true
+
+[node name="Combatant2" type="Node2D" parent="."]
+position = Vector2( 800, 300 )
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Combatant2"]
+scale = Vector2( 10, 10 )
+frames = SubResource( 9 )
+frame = 1
+playing = true
+flip_h = true
