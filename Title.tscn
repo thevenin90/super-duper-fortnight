@@ -26,7 +26,7 @@ soundfont = "res://Music/AegeanSymphonicOrchestra-SND/AegeanSymphonicOrchestra-S
 position = Vector2( 512, 320 )
 scale = Vector2( 10, 10 )
 frames = ExtResource( 3 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="Label" type="Label" parent="."]

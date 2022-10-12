@@ -1,9 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/Exec/execRunning.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/StatBlock.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Magie/Magie.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Background/Bloody.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Dev/TestBattle.gd" type="Script" id=5]
+[ext_resource path="res://Novel/TextWindow.png" type="Texture" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Dev/btnAttack.gd" type="Script" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -54,28 +58,80 @@ animations = [ {
 } ]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Bloody" type="Sprite" parent="."]
-position = Vector2( 529, 348.5 )
-scale = Vector2( 1.74688, 1.50625 )
+position = Vector2( 501.499, 301 )
+scale = Vector2( 1.66094, 1.30833 )
 texture = ExtResource( 4 )
 
+[node name="TextWindow" type="Sprite" parent="."]
+position = Vector2( 512, 450 )
+texture = ExtResource( 6 )
+
+[node name="rtlTextBox" type="RichTextLabel" parent="TextWindow"]
+anchor_left = 0.04
+anchor_right = 0.96
+anchor_bottom = 0.98
+margin_left = -504.96
+margin_top = -110.0
+margin_right = -519.04
+margin_bottom = -164.0
+
 [node name="Combatant1" type="Node2D" parent="."]
-position = Vector2( 200, 300 )
+position = Vector2( 200, 150 )
+scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 2 )
+Str = 5
+HitPoints = 100
+HitPointsMax = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Combatant1"]
 scale = Vector2( 10, 10 )
 frames = ExtResource( 1 )
+frame = 9
 playing = true
 
+[node name="HitPoints" type="Label" parent="Combatant1"]
+margin_left = -100.0
+margin_top = 150.0
+margin_right = 100.0
+margin_bottom = 182.0
+text = "asdf"
+align = 1
+
 [node name="Combatant2" type="Node2D" parent="."]
-position = Vector2( 800, 300 )
+position = Vector2( 800, 150 )
+scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 2 )
+Str = 5
+HitPoints = 100
+HitPointsMax = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Combatant2"]
 scale = Vector2( 10, 10 )
 frames = SubResource( 9 )
-frame = 1
+frame = 4
 playing = true
 flip_h = true
+
+[node name="HitPoints" type="Label" parent="Combatant2"]
+margin_left = -100.0
+margin_top = 150.0
+margin_right = 100.0
+margin_bottom = 182.0
+text = "asdf"
+align = 1
+
+[node name="btnAttack" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.25
+margin_left = 435.0
+margin_top = 69.0
+margin_right = 572.0
+margin_bottom = 178.0
+text = "Attack"
+icon = ExtResource( 7 )
+script = ExtResource( 8 )
