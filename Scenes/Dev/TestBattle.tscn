@@ -111,7 +111,6 @@ HitPointsMax = 100
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Combatant2"]
 scale = Vector2( 10, 10 )
 frames = SubResource( 9 )
-frame = 4
 playing = true
 flip_h = true
 
