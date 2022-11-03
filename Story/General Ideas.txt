@@ -1,0 +1,3 @@
+The character holds different kinds of flames/lightsources.
+Torches shed more light but candles can flicker in one direction or the other, based on ephemeral creatures or wind.
+
