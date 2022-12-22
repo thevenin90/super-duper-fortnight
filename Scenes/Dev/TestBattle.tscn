@@ -89,7 +89,7 @@ HitPointsMax = 100
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Combatant1"]
 scale = Vector2( 10, 10 )
 frames = ExtResource( 1 )
-frame = 9
+frame = 3
 playing = true
 
 [node name="HitPoints" type="Label" parent="Combatant1"]
@@ -111,6 +111,7 @@ HitPointsMax = 100
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Combatant2"]
 scale = Vector2( 10, 10 )
 frames = SubResource( 9 )
+frame = 2
 playing = true
 flip_h = true
 

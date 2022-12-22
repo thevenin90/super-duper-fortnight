@@ -25,11 +25,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	pass
 
-func get_input(delta:float ):
+func get_input(_delta:float ):
 	velocity = Vector2()
 	
 	#textVel.text += "velocity.x: " + str(velocity.x)
@@ -41,11 +41,13 @@ func get_input(delta:float ):
 	#textVel.text += "\npow(abs(velocity.x),(abs(velocity.x)-SpeedMax)): " + str(pow(abs(velocity.x), (abs(velocity.x)-SpeedMax)))
 	
 	if Input.is_action_pressed('control_right'):
-		velocity.x += SpeedAcc * delta #1
+		#velocity.x += SpeedAcc * delta #1
+		velocity.x = SpeedMax
 		f = Facing.right 
 		#sprite.rotation = deg2rad(90)
 	elif Input.is_action_pressed('control_left'):
-		velocity.x -= SpeedAcc * delta #1
+		#velocity.x -= SpeedAcc * delta #1
+		velocity.x = SpeedMax * -1.0
 		f = Facing.left
 		#sprite.scale.
 		#sprite.rotation = deg2rad(270)
@@ -59,11 +61,13 @@ func get_input(delta:float ):
 		#velocity.x = velocity.x * (abs(velocity.x) / (abs(velocity.x) + pow(SpeedMax, -1*velocity.x)))
 		
 	if Input.is_action_pressed('control_down'):
-		velocity.y += SpeedAcc * delta #1
+		#velocity.y += SpeedAcc * delta #1
+		velocity.y = SpeedMax
 		f = Facing.down
 		#sprite.rotation = deg2rad(180)
 	elif Input.is_action_pressed('control_up'):
-		velocity.y -= SpeedAcc * delta #1
+		#velocity.y -= SpeedAcc * delta #1
+		velocity.y = -1.0 * SpeedMax
 		f = Facing.up
 		#sprite.rotation = deg2rad(0)
 	#else:
