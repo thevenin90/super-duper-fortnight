@@ -35,7 +35,7 @@ var timer:float = 0.0
 # 使用時間
 var using_timer:float = 0.0
 # リンク済の音色
-onready var linked:AudioStreamPlayer = $Linked
+@onready var linked:AudioStreamPlayer = $Linked
 var linked_base_pitch:float = 0.0
 # 同時発音数
 var polyphony_count:float = 1.0
@@ -52,13 +52,13 @@ var force_update:bool = false
 var is_check_using_linked:bool
 
 # ADSステート
-onready var ads_state:Array = [
+@onready var ads_state:Array = [
 	Bank.VolumeState.new( 0.0, 0.0 ),
 	Bank.VolumeState.new( 0.2, -144.0 )
 	# { "time": 0.2, "jump_to": 0.0 },	# not implemented
 ]
 # Rステート
-onready var release_state:Array = [
+@onready var release_state:Array = [
 	Bank.VolumeState.new( 0.0, 0.0 ),
 	Bank.VolumeState.new( 0.01, -144.0 )
 	# { "time": 0.2, "jump_to": 0.0 },	# not implemented
@@ -119,7 +119,7 @@ func play( from_position:float = 0.0 ) -> void:
 	var from_position_skip_silence:float = from_position + Bank.head_silent_second
 	var mix_delay:float = clamp( self.gap_second - AudioServer.get_time_to_next_mix( ), 0.0, self.gap_second )
 	var own_from_position:float = from_position_skip_silence - mix_delay * pow( 2.0, self.base_pitch )
-	.play( max( 0.0, own_from_position ) )
+	super.play( max( 0.0, own_from_position ) )
 	if self.is_check_using_linked:
 		var linked_from_position:float = from_position_skip_silence - mix_delay * pow( 2.0, self.linked_base_pitch )
 		self.linked.play( max( 0.0, linked_from_position ) )
@@ -133,7 +133,7 @@ func stop( ) -> void:
 	# 停止
 	#
 
-	.stop( )
+	super.stop( )
 	if self.linked != null:
 		self.linked.stop( )
 	self.hold = false
@@ -178,7 +178,7 @@ func _update_adsr( delta:float ) -> void:
 				var pre_state:Bank.VolumeState = use_state[state_number-1]
 				var t:float = 1.0 - ( state.time - self.timer ) / ( state.time - pre_state.time )
 				if not self.releasing and all_states > 2 and ( state_number == 1 or state_number == 2 ):
-					self.current_volume_db = linear2db( lerp( db2linear( pre_state.volume_db ), db2linear( state.volume_db ), t ) )
+					self.current_volume_db = linear_to_db( lerp( db_to_linear( pre_state.volume_db ), db_to_linear( state.volume_db ), t ) )
 				else:
 					self.current_volume_db = lerp( pre_state.volume_db, state.volume_db, t )
 				break
@@ -206,12 +206,12 @@ func _update_volume( ) -> void:
 	# 音量を更新
 	#
 
-	var v:float = self.current_volume_db + linear2db( float( self.velocity ) / 127.0 )# + self.instrument.volume_db
+	var v:float = self.current_volume_db + linear_to_db( float( self.velocity ) / 127.0 )# + self.instrument.volume_db
 
 	if self.is_check_using_linked:
-		v = max( -144.0, linear2db( db2linear( v ) / self.polyphony_count / 2.0 ) )
+		v = max( -144.0, linear_to_db( db_to_linear( v ) / self.polyphony_count / 2.0 ) )
 		self.volume_db = v
 		self.linked.volume_db = v
 	else:
-		v = max( -144.0, linear2db( db2linear( v ) / self.polyphony_count ) )
+		v = max( -144.0, linear_to_db( db_to_linear( v ) / self.polyphony_count ) )
 		self.volume_db = v

@@ -6,7 +6,7 @@ extends Node2D
 # var b = "text"
 
 var midi_player:MidiPlayer
-onready var sprLoading:AnimatedSprite = get_node("spriteLoading")
+@onready var sprLoading:AnimatedSprite2D = get_node("spriteLoading")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +14,7 @@ func _ready():
 	#midi_player =  # get_node("MidiPlayer")
 	#midi_player.play()
 	#sprLoading.visible = false
-	
+	sprLoading.play("default", 1.0, true)
 	pass # Replace with function body.
 
 
