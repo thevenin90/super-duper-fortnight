@@ -4,7 +4,7 @@
 	MIT License
 """
 
-tool
+@tool
 extends EditorPlugin
 
 #var sf2_import_plugin
@@ -23,11 +23,11 @@ func _exit_tree( ):
 	#self.remove_import_plugin( self.sf2_import_plugin )
 	#self.sf2_import_plugin = null
 
-func has_main_screen():
+func _has_main_screen():
 	return false
 
-func make_visible( visible:bool ):
+func _make_visible( visible:bool ):
 	pass
 
-func get_plugin_name( ):
+func _get_plugin_name( ):
 	return "Godot MIDI Player"

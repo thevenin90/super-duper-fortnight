@@ -1,61 +1,64 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://dtojk3bas8avj"]
 
-[ext_resource path="res://addons/midi/MidiPlayer.gd" type="Script" id=1]
-[ext_resource path="res://Title.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Exec/execRunning.tres" type="SpriteFrames" id=3]
-[ext_resource path="res://Textures/PoorGrass.png" type="Texture" id=4]
-[ext_resource path="res://themeTitleText.tres" type="Theme" id=5]
-[ext_resource path="res://Title_btnStart.gd" type="Script" id=6]
+[ext_resource type="Script" path="res://addons/midi/MidiPlayer.gd" id="1"]
+[ext_resource type="Script" path="res://Title.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://c8ba5b3ao6p8p" path="res://Textures/PoorGrass.png" id="2_y7b53"]
+[ext_resource type="SpriteFrames" uid="uid://bldfsa6dk0yki" path="res://Sprites/Exec/execRunning.tres" id="4_7cosd"]
+[ext_resource type="Theme" path="res://themeTitleText.tres" id="5"]
+[ext_resource type="Script" path="res://Title_btnStart.gd" id="6"]
+[ext_resource type="AudioStream" uid="uid://ccmdaysjm538c" path="res://Music/Straight Practice/Assured Alert - Short.mp3" id="7_48fto"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="PoorGrass" type="Sprite" parent="."]
-position = Vector2( 512, 320 )
-scale = Vector2( 4, 3 )
-texture = ExtResource( 4 )
+[node name="PoorGrass" type="Sprite2D" parent="."]
+position = Vector2(679.5, 422)
+scale = Vector2(5.87891, 3.79688)
+texture = ExtResource("2_y7b53")
 
 [node name="MidiPlayer" type="Node" parent="."]
-script = ExtResource( 1 )
-file = "res://Music/Straight Practice/Assured Alert in B LOCRIAN (64bpm) [-1439839938834541242].mid"
-playing = true
+script = ExtResource("1")
+file = "res://Music/Straight Practice/Boiling Stress in F LYDIAN (64bpm) [-1439839938834541242].mid"
 volume_db = -15.0
 soundfont = "res://Music/AegeanSymphonicOrchestra-SND/AegeanSymphonicOrchestra-SND.sf2"
+mix_target = 2
 
-[node name="spriteLoading" type="AnimatedSprite" parent="."]
-position = Vector2( 512, 320 )
-scale = Vector2( 10, 10 )
-frames = ExtResource( 3 )
-frame = 5
-playing = true
+[node name="spriteLoading" type="AnimatedSprite2D" parent="."]
+position = Vector2(512, 320)
+scale = Vector2(10, 10)
+sprite_frames = ExtResource("4_7cosd")
+frame_progress = 0.304086
 
 [node name="Label" type="Label" parent="."]
-margin_right = 256.0
-margin_bottom = 24.0
-rect_scale = Vector2( 4, 4 )
-theme = ExtResource( 5 )
+offset_right = 256.0
+offset_bottom = 24.0
+scale = Vector2(4, 4)
+theme = ExtResource("5")
 text = "Supper Dupper Fart Noot"
-align = 1
 
 [node name="btnStart" type="Button" parent="."]
-margin_left = 16.0
-margin_top = 128.0
-margin_right = 272.0
-margin_bottom = 192.0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 272.0
+offset_bottom = 192.0
 text = "Start"
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="btnContinue" type="Button" parent="."]
-margin_left = 16.0
-margin_top = 256.0
-margin_right = 272.0
-margin_bottom = 320.0
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 272.0
+offset_bottom = 320.0
 text = "Continue"
 
 [node name="btnExit" type="Button" parent="."]
-margin_left = 16.0
-margin_top = 512.0
-margin_right = 272.0
-margin_bottom = 576.0
-theme = ExtResource( 5 )
+offset_left = 16.0
+offset_top = 512.0
+offset_right = 272.0
+offset_bottom = 576.0
+theme = ExtResource("5")
 text = "EXIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_48fto")
+autoplay = true

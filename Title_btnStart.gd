@@ -16,5 +16,5 @@ func _ready():
 #	pass
 
 func _pressed():
-	var x = get_tree().change_scene("res://Scenes/01 Start.tscn")
+	var x = get_tree().change_scene_to_file("res://Scenes/01 Start.tscn")
 	print (x)

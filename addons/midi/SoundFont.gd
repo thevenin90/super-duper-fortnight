@@ -119,8 +119,8 @@ class SoundFontInfo:
 	var isft:String = ""
 
 class SoundFontSampleData:
-	var smpl:PoolByteArray
-	var sm24:PoolByteArray
+	var smpl:PackedByteArray
+	var sm24:PackedByteArray
 
 class SoundFontPresetData:
 	var phdr:Array
@@ -165,7 +165,7 @@ class SoundFontPresetDataModulator:
 	var controller:int
 	var controllerPallete:int
 
-	func _init( u:int ):
+	func _init(u:int):
 		self.type = ( u >> 10 ) & 0x3f
 		self.direction = ( u >> 8 ) & 0x01
 		self.polarity = ( u >> 9 ) & 0x01
@@ -193,7 +193,7 @@ class SoundFontParseResult:
 	var error:int = OK
 	var data:SoundFontData = null
 
-	func _init( ):
+	func _init():
 		pass
 
 func read_file( path:String ) -> SoundFontParseResult:
@@ -204,21 +204,21 @@ func read_file( path:String ) -> SoundFontParseResult:
 	#
 
 	var result: = SoundFontParseResult.new( )
-	var f:File = File.new( )
-
-	var err:int = f.open( path, f.READ )
+	
+	var f = FileAccess.open( path, FileAccess.READ )
+	var err = f.get_error()
 	if err != OK:
 		result.error = err
 		return result
 	var stream:StreamPeerBuffer = StreamPeerBuffer.new( )
-	stream.set_data_array( f.get_buffer( f.get_len( ) ) )
+	stream.set_data_array( f.get_buffer( f.get_length( ) ) )
 	stream.big_endian = false
 	f.close( )
 
 	result.data = self._read( stream )
 	return result
 
-func read_data( data:PoolByteArray ) -> SoundFontParseResult:
+func read_data( data:PackedByteArray ) -> SoundFontParseResult:
 	#
 	# 配列から読み込み
 	# @param	data	データ
