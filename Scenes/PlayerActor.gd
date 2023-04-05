@@ -18,6 +18,8 @@ var velocity:Vector2 = Vector2()
 enum Facing {up, down, left, right}
 var f = Facing.right
 var isJumping = false
+var isAttacking = false
+var isStartAttack = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +33,7 @@ func _process(_delta):
 
 func get_input(_delta:float ):
 	velocity = Vector2()
+	isStartAttack = false 
 	
 	#textVel.text += "velocity.x: " + str(velocity.x)
 	#textVel.text += "\nabs(velocity.x): " + str(abs(velocity.x))
@@ -43,12 +46,14 @@ func get_input(_delta:float ):
 	if Input.is_action_pressed('control_right'):
 		#velocity.x += SpeedAcc * delta #1
 		velocity.x = SpeedMax
-		f = Facing.right 
+		f = Facing.right
+		sprite.flip_h = false
 		#sprite.rotation = deg2rad(90)
 	elif Input.is_action_pressed('control_left'):
 		#velocity.x -= SpeedAcc * delta #1
 		velocity.x = SpeedMax * -1.0
 		f = Facing.left
+		sprite.flip_h = true
 		#sprite.scale.
 		#sprite.rotation = deg2rad(270)
 	#elif velocity.x == 0:
@@ -63,17 +68,20 @@ func get_input(_delta:float ):
 	if Input.is_action_pressed('control_down'):
 		#velocity.y += SpeedAcc * delta #1
 		velocity.y = SpeedMax
-		f = Facing.down
+		#f = Facing.down
 		#sprite.rotation = deg2rad(180)
 	elif Input.is_action_pressed('control_up'):
 		#velocity.y -= SpeedAcc * delta #1
 		velocity.y = -1.0 * SpeedMax
-		f = Facing.up
+		#f = Facing.up
 		#sprite.rotation = deg2rad(0)
 	#else:
 	#	velocity.y = abs(velocity.y) / (abs(velocity.y) + (SpeedDecel * delta))
 	
 	velocity = velocity.normalized() * SpeedMax
+	
+	if Input.is_action_pressed("attack_main"):
+		isStartAttack = true
 
 
 func _physics_process(delta):
@@ -83,4 +91,38 @@ func _physics_process(delta):
 	get_input(delta)
 	#textVel.text += "\nX: " + str(velocity.x) + "\nY: " + str(velocity.y)
 	velocity = move_and_slide(velocity)
+	set_animation()
 	
+func set_animation():
+	
+	if isStartAttack && !isAttacking:
+		isAttacking = true
+		if f == Facing.right:
+			$AnimationPlayer.play("animAttack")
+		else :
+			$AnimationPlayer.play("animAttack_L")
+	
+	if isAttacking:
+		return 
+	
+	if velocity == Vector2(0,0):
+		if sprite.animation != "Standing":
+			sprite.animation = "Standing"
+	else:
+		if sprite.animation != "Walking":
+			sprite.animation = "Walking"
+	pass
+
+
+func _on_CharacterSprite_animation_finished():
+	#if $CharacterSprite.animation == "Atacking":
+	#	$CharacterSprite.animation == "Standing"
+	pass # Replace with function body.
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "animAttack":
+		isAttacking = false
+	if anim_name == "animAttack_L":
+		isAttacking = false
+	pass # Replace with function body.
