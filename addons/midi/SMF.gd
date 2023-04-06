@@ -149,7 +149,7 @@ class SMFParseResult:
 	var error:int = OK
 	var data:SMFData = null
 
-	func _init():
+	func _init( ):
 		pass
 
 class SMFData:
@@ -158,7 +158,7 @@ class SMFData:
 	var timebase:int
 	var tracks:Array
 
-	func _init(_format_type:int = 0,_track_count:int = 0,_timebase:int = 480,_tracks:Array = []):
+	func _init( _format_type:int = 0, _track_count:int = 0, _timebase:int = 480, _tracks:Array = [] ):
 		self.format_type = _format_type
 		self.track_count = _track_count
 		self.timebase = _timebase
@@ -168,7 +168,7 @@ class MIDITrack:
 	var track_number:int
 	var events:Array
 
-	func _init(_track_number:int = 0,_events:Array = []):
+	func _init( _track_number:int = 0, _events:Array = [] ):
 		self.track_number = _track_number
 		self.events = _events
 
@@ -177,7 +177,7 @@ class MIDIEventChunk:
 	var channel_number:int
 	var event:MIDIEvent
 
-	func _init(_time:int = 0,_channel_number:int = 0,_event = null):
+	func _init( _time:int = 0, _channel_number:int = 0, _event = null ):
 		self.time = _time
 		self.channel_number = _channel_number
 		self.event = _event
@@ -189,7 +189,7 @@ class MIDIEventNoteOff extends MIDIEvent:
 	var note:int
 	var velocity:int
 
-	func _init(_note:int = 0,_velocity:int = 0):
+	func _init( _note:int = 0, _velocity:int = 0 ):
 		self.type = MIDIEventType.note_off
 		self.note = _note
 		self.velocity = _velocity
@@ -198,7 +198,7 @@ class MIDIEventNoteOn extends MIDIEvent:
 	var note:int
 	var velocity:int
 
-	func _init(_note:int = 0,_velocity:int = 0):
+	func _init( _note:int = 0, _velocity:int = 0 ):
 		self.type = MIDIEventType.note_on
 		self.note = _note
 		self.velocity = _velocity
@@ -207,7 +207,7 @@ class MIDIEventPolyphonicKeyPressure extends MIDIEvent:
 	var note:int
 	var value:int
 
-	func _init(_note:int = 0,_value:int = 0):
+	func _init( _note:int = 0, _value:int = 0 ):
 		self.type = MIDIEventType.polyphonic_key_pressure
 		self.note = _note
 		self.value = _value
@@ -216,7 +216,7 @@ class MIDIEventControlChange extends MIDIEvent:
 	var number:int
 	var value:int
 
-	func _init(_number:int = 0,_value:int = 0):
+	func _init( _number:int = 0, _value:int = 0 ):
 		self.type = MIDIEventType.control_change
 		self.number = _number
 		self.value = _value
@@ -224,28 +224,28 @@ class MIDIEventControlChange extends MIDIEvent:
 class MIDIEventProgramChange extends MIDIEvent:
 	var number:int
 
-	func _init(_number:int = 0):
+	func _init( _number:int = 0 ):
 		self.type = MIDIEventType.program_change
 		self.number = _number
 
 class MIDIEventChannelPressure extends MIDIEvent:
 	var value:int
 
-	func _init(_value:int = 0):
+	func _init( _value:int = 0 ):
 		self.type = MIDIEventType.channel_pressure
 		self.value = _value
 
 class MIDIEventPitchBend extends MIDIEvent:
 	var value:int
 
-	func _init(_value:int = 0):
+	func _init( _value:int = 0 ):
 		self.type = MIDIEventType.pitch_bend
 		self.value = _value
 
 class MIDIEventSystemEvent extends MIDIEvent:
 	var args:Dictionary
 
-	func _init(_args:Dictionary = {}):
+	func _init( _args:Dictionary = {} ):
 		self.type = MIDIEventType.system_event
 		self.args = _args
 
@@ -387,7 +387,7 @@ func _read_system_event( stream:StreamPeerBuffer, event_type_byte:int ):
 			MIDISystemEventType.sequence_number:
 				return { "type": MIDISystemEventType.sequence_number, "number": stream.get_u16( ) }
 			MIDISystemEventType.text_event, MIDISystemEventType.copyright, MIDISystemEventType.track_name, MIDISystemEventType.instrument_name, MIDISystemEventType.lyric, MIDISystemEventType.cue_point, MIDISystemEventType.marker:
-				return { "type": MIDISystemEventType.text_event, "text": self._read_string( stream, size ) }
+				return { "type": meta_type, "text": self._read_string( stream, size ) }
 
 			MIDISystemEventType.midi_channel_prefix:
 				if size != 1:
@@ -578,7 +578,7 @@ func write( smf:SMF, running_status:bool = false ):
 	# 書き込む
 	# @param	smf	SMF structure
 	# @param	running_status	use running status
-	# @return	PackedByteArray
+	# @return	PoolByteArray
 	#
 
 	var stream:StreamPeerBuffer = StreamPeerBuffer.new( )
@@ -637,7 +637,7 @@ func _write_track( stream:StreamPeerBuffer, track, running_status:bool ) -> bool
 	#
 
 	var events:Array = track.events.duplicate( )
-	events.sort_custom(Callable(TrackEventSorter,"sort"))
+	events.sort_custom( Callable(TrackEventSorter,"sort"))
 
 	var buf:StreamPeerBuffer = StreamPeerBuffer.new( )
 	buf.big_endian = true
@@ -748,50 +748,50 @@ func _write_system_event( stream:StreamPeerBuffer, event ):
 		MIDISystemEventType.text_event:
 			stream.put_u8( 0xFF )
 			stream.put_u8( 0x01 )
-			self._write_variable_int( stream, event.text.to_ascii_buffer( ).size( ) )
-			if stream.put_data( event.text.to_ascii_buffer( ) ) != OK:
+			self._write_variable_int( stream, event.text.to_ascii( ).size( ) )
+			if stream.put_data( event.text.to_ascii( ) ) != OK:
 				push_error( "cant write text event" )
 				breakpoint
 		MIDISystemEventType.copyright:
 			stream.put_u8( 0xFF )
 			stream.put_u8( 0x02 )
-			self._write_variable_int( stream, event.text.to_ascii_buffer( ).size( ) )
-			if stream.put_data( event.text.to_ascii_buffer( ) ) != OK:
+			self._write_variable_int( stream, event.text.to_ascii( ).size( ) )
+			if stream.put_data( event.text.to_ascii( ) ) != OK:
 				push_error( "cant write copyright text" )
 				breakpoint
 		MIDISystemEventType.track_name:
 			stream.put_u8( 0xFF )
 			stream.put_u8( 0x03 )
-			self._write_variable_int( stream, event.text.to_ascii_buffer( ).size( ) )
-			if stream.put_data( event.text.to_ascii_buffer( ) ) != OK:
+			self._write_variable_int( stream, event.text.to_ascii( ).size( ) )
+			if stream.put_data( event.text.to_ascii( ) ) != OK:
 				push_error( "cant write track name text" )
 				breakpoint
 		MIDISystemEventType.instrument_name:
 			stream.put_u8( 0xFF )
 			stream.put_u8( 0x04 )
-			self._write_variable_int( stream, event.text.to_ascii_buffer( ).size( ) )
-			if stream.put_data( event.text.to_ascii_buffer( ) ) != OK:
+			self._write_variable_int( stream, event.text.to_ascii( ).size( ) )
+			if stream.put_data( event.text.to_ascii( ) ) != OK:
 				push_error( "cant write instrument name" )
 				breakpoint
 		MIDISystemEventType.lyric:
 			stream.put_u8( 0xFF )
 			stream.put_u8( 0x05 )
-			self._write_variable_int( stream, event.text.to_ascii_buffer( ).size( ) )
-			if stream.put_data( event.text.to_ascii_buffer( ) ) != OK:
+			self._write_variable_int( stream, event.text.to_ascii( ).size( ) )
+			if stream.put_data( event.text.to_ascii( ) ) != OK:
 				push_error( "cant write lyric text" )
 				breakpoint
 		MIDISystemEventType.marker:
 			stream.put_u8( 0xFF )
 			stream.put_u8( 0x06 )
-			self._write_variable_int( stream, event.text.to_ascii_buffer( ).size( ) )
-			if stream.put_data( event.text.to_ascii_buffer( ) ) != OK:
+			self._write_variable_int( stream, event.text.to_ascii( ).size( ) )
+			if stream.put_data( event.text.to_ascii( ) ) != OK:
 				push_error( "cant write marker text" )
 				breakpoint
 		MIDISystemEventType.cue_point:
 			stream.put_u8( 0xFF )
 			stream.put_u8( 0x07 )
-			self._write_variable_int( stream, event.text.to_ascii_buffer( ).size( ) )
-			if stream.put_data( event.text.to_ascii_buffer( ) )!= OK:
+			self._write_variable_int( stream, event.text.to_ascii( ).size( ) )
+			if stream.put_data( event.text.to_ascii( ) )!= OK:
 				push_error( "cant write cue point" )
 				breakpoint
 

@@ -3,32 +3,32 @@ extends EditorImportPlugin
 
 enum Presets { PRESET_DEFAULT }
 
-func _get_importer_name( ):
+func get_importer_name( ):
 	return "SoundFont Importer for Godot MIDI Player"
 
-func _get_visible_name( ):
+func get_visible_name( ):
 	return "SoundFont"
 
-func _get_recognized_extensions( ):
+func get_recognized_extensions( ):
 	return ["sf2"]
 
-func _get_save_extension( ):
+func get_save_extension( ):
 	return "res"
 
-func _get_resource_type( ):
+func get_resource_type( ):
 	return "Resource"
 
-func _get_preset_count( ):
+func get_preset_count( ):
 	return Presets.size()
 
-func _get_preset_name( preset:int ):
+func get_preset_name( preset:int ):
 	match preset:
 		Presets.PRESET_DEFAULT:
 			return "Default"
 		_:
 			return "Unknown"
 
-func _get_import_options( text:String, preset:int  ): #this seems like an incorrect fix
+func get_import_options( preset:int ):
 	match preset:
 		Presets.PRESET_DEFAULT:
 			return [{
@@ -38,7 +38,7 @@ func _get_import_options( text:String, preset:int  ): #this seems like an incorr
 		_:
 			return []
 
-func _get_option_visibility( option:String, forAnimation:StringName, options:Dictionary ):
+func get_option_visibility( option:String, options:Dictionary ):
 	return true
 
 func import( source_file:String, save_path:String, s:Dictionary, platform_variants:Array, gen_files:Array ) -> int:
@@ -50,4 +50,4 @@ func import( source_file:String, save_path:String, s:Dictionary, platform_varian
 	var bank: = Bank.new( )
 	bank.read_soundfont( result.data )
 
-	return ResourceSaver.save(  bank,"%s.%s" % [save_path, self._get_save_extension( )], ResourceSaver.FLAG_COMPRESS )
+	return ResourceSaver.save( bank, "%s.%s" % [save_path, self._get_save_extension( )], ResourceSaver.FLAG_COMPRESS )

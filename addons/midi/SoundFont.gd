@@ -165,7 +165,7 @@ class SoundFontPresetDataModulator:
 	var controller:int
 	var controllerPallete:int
 
-	func _init(u:int):
+	func _init( u:int ):
 		self.type = ( u >> 10 ) & 0x3f
 		self.direction = ( u >> 8 ) & 0x01
 		self.polarity = ( u >> 9 ) & 0x01
@@ -193,7 +193,7 @@ class SoundFontParseResult:
 	var error:int = OK
 	var data:SoundFontData = null
 
-	func _init():
+	func _init( ):
 		pass
 
 func read_file( path:String ) -> SoundFontParseResult:
@@ -496,7 +496,7 @@ func _read_pdta_gen( stream:StreamPeerBuffer ) -> Array:
 
 	# 4 bytes
 	#while 0 < chunk_stream.get_available_bytes( ):
-	for _i in range( chunk_stream.get_available_bytes( ) / 4.0 ):
+	for i in range( chunk_stream.get_available_bytes( ) / 4 ):
 		var gen:SoundFontGenerator = SoundFontGenerator.new( )
 		
 		gen.gen_oper = chunk_stream.get_u16( )
