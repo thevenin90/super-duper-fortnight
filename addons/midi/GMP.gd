@@ -23,11 +23,11 @@ func _exit_tree( ):
 	#self.remove_import_plugin( self.sf2_import_plugin )
 	#self.sf2_import_plugin = null
 
-func _has_main_screen():
+func has_main_screen():
 	return false
 
-func _make_visible( visible:bool ):
+func make_visible( visible:bool ):
 	pass
 
-func _get_plugin_name( ):
+func get_plugin_name( ):
 	return "Godot MIDI Player"

@@ -1,30 +1,55 @@
-# Dialogic 2.0
-<img width="1280" alt="cover" src="https://user-images.githubusercontent.com/2206700/189457799-6327bab0-b085-4421-8640-6a18e395d17d.png">
-Create dialogs, characters and scenes to display conversations in your Godot games.
+# Godot MIDI Player
 
-## Version 2.0 - Alpha  ![Godot v4.0](https://img.shields.io/badge/Godot-v4.0-%23478cbf)
-Dialogic 2.0 is a major rewrite of the plugin including many compatibility-breaking changes. It is currently developed exclusively for Godot 4.
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E44AWTA)
 
-If you are looking for the Godot 3.5 version you can find it here: https://github.com/coppolaemilio/dialogic/tree/dialogic-1
+Software MIDI player library for Godot Engine 3.4 and 3.5 later
 
+* Changes play speed.
+* Set tempo.
+* Emit on some events (tempo change, appears lyric ...)
+* You can control like AudioStreamPlayer.
 
-## Installation
+## Try it
 
-To install a Dialogic, download it as a ZIP archive. All releases are listed here: [releases](https://github.com/coppolaemilio/dialogic/releases). Then extract the ZIP archive and move the `addons/` folder it contains into your project folder. Then, enable the plugin in project settings. If you see errors in the output panel, you might need to reboot the editor after enabling Dialogic for the first time.
+1. Copy *.mid under "res://"
+2. Copy *.sf2 under "res://"
+3. Set MIDI path to MidiPlayer "file" parameter.
+4. Set SoundFont path to MidiPlayer "soundfont" parameter.
+5. call play() method
 
-If you want to know more about installing plugins you can read the [Godot docs page](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html).
+## How to use
 
-<!-- You can also install Dialogic using the **AssetLib** tab in the editor. !-->
+* See [wiki](https://bitbucket.org/arlez80/godot-midi-player/wiki/)
 
----
+### Demo
 
-## 📃 Credits
-Made by [Emilio Coppola](https://github.com/coppolaemilio) and [Jowan-Spooner](https://github.com/Jowan-Spooner).
+* [download](https://bitbucket.org/arlez80/godot-midi-player/downloads/demo.zip)
+    * This demo can get MIDIInput events. You can play using MIDI keyboards!
+* BGM "failyland_gm.mid" from [IvyMaze]( http://ivymaze.sakura.ne.jp/ )
+* Youtube: [Demo #1](https://www.youtube.com/watch?v=SdrU4uRepVs)
+* Youtube: [Demo #2](https://www.youtube.com/watch?v=nn21P3eI4hs)
+* Youtube: [Demo #3](https://www.youtube.com/watch?v=dAYfFH-Fq2o)
 
-Contributors: [zaknafean](https://github.com/zaknafean), [thebardsrc](https://github.com/thebardsrc), [and more!](https://github.com/coppolaemilio/dialogic/graphs/contributors).
+## Hint
 
-Special thanks: [Arnaud](https://github.com/arnaudvergnet), [AnidemDex](https://github.com/AnidemDex), [ellogwen](https://github.com/ellogwen), [Tim Krief](https://github.com/timkrief), [Toen](https://twitter.com/ToenAndreMC), Òscar, [Francisco Presencia](https://francisco.io/), [M7mdKady14](https://github.com/M7mdKady14).
+* Set false to `GodotMIDIPlayer.load_all_voices_from_soundfont` to load voices for program change message in MIDI sequence.
+    * of course, `GodotMIDIPlayer.load_all_voices_from_soundfont = true` will be very slow.
+* SMF format 0 loading faster than SMF format 1.
+    * because format 1 data will be convert to format 0 in the player.
 
-### Thank you to all my [Patreons](https://www.patreon.com/coppolaemilio) and Github sponsors for making this possible!
+## TODO
 
-[MIT License](https://github.com/coppolaemilio/dialogic/blob/main/LICENSE)
+* See [issues]( https://bitbucket.org/arlez80/godot-midi-player/issues )
+
+## Not TODO
+
+* Supports play format 2
+    * SMF.gd can read it. but I will not implement it to MIDI Player.
+
+## License
+
+MIT License
+
+## Author
+
+* @arlez80 あるる / きのもと 結衣 ( Yui Kinomoto )

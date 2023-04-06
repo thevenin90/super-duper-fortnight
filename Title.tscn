@@ -19,7 +19,9 @@ texture = ExtResource("2_y7b53")
 [node name="MidiPlayer" type="Node" parent="."]
 script = ExtResource("1")
 file = "res://Music/Straight Practice/Boiling Stress in F LYDIAN (64bpm) [-1439839938834541242].mid"
+playing = true
 volume_db = -15.0
+load_all_voices_from_soundfont = false
 soundfont = "res://Music/AegeanSymphonicOrchestra-SND/AegeanSymphonicOrchestra-SND.sf2"
 mix_target = 2
 
@@ -61,4 +63,3 @@ text = "EXIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_48fto")
-autoplay = true
