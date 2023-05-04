@@ -71,7 +71,6 @@ var _character_directory: Dictionary = {}
 func _execute() -> void:
 	match action_type:
 		ActionTypes.Join:
-			
 			if character:
 				if !dialogic.Portraits.is_character_joined(character):
 					var n = dialogic.Portraits.add_portrait(character, portrait, position, mirrored, z_index, extra_data)
@@ -89,11 +88,17 @@ func _execute() -> void:
 								dialogic.current_state = Dialogic.states.ANIMATING
 								await anim.finished
 								dialogic.current_state = Dialogic.states.IDLE
+						
+						if dialogic.has_subsystem('History'):
+							dialogic.History.store_simple_history_entry(character.display_name + " joined", event_name, {'character': character.display_name, 'mode':'Join'})
+					
 				else:
 					dialogic.Portraits.change_portrait(character, portrait, false)
 					if animation_name.is_empty():
 						animation_length = DialogicUtil.get_project_setting('dialogic/animations/join_default_length', 0.5)
 					dialogic.Portraits.move_portrait(character, position, animation_length)
+					
+					
 		ActionTypes.Leave:
 			if _character_from_directory == '--All--':
 				if animation_name.is_empty():
@@ -116,6 +121,10 @@ func _execute() -> void:
 				else:
 					for chara in dialogic.Portraits.get_joined_characters():
 						dialogic.Portraits.remove_portrait(chara)
+				
+				if dialogic.has_subsystem('History'):
+					dialogic.History.store_simple_history_entry("Everyone left", event_name, {'character': "All", 'mode':'Leave'})
+					
 			elif character:
 				if dialogic.Portraits.is_character_joined(character):
 					if animation_name.is_empty():
@@ -135,6 +144,8 @@ func _execute() -> void:
 							dialogic.current_state = Dialogic.states.IDLE
 					else:
 						dialogic.Portraits.remove_portrait(character)
+					if dialogic.has_subsystem('History'):
+						dialogic.History.store_simple_history_entry(character.display_name+" left", event_name, {'character': character.display_name, 'mode':'Leave'})
 			
 		ActionTypes.Update:
 			if character:
@@ -184,11 +195,6 @@ func to_text() -> String:
 		ActionTypes.Join: result_string += "Join "
 		ActionTypes.Leave: result_string += "Leave "
 		ActionTypes.Update: result_string += "Update "
-	
-#	print('to_string')
-	
-#	print('character ', character)
-#	print('characterfrom ', _character_from_directory)
 	
 	if character or _character_from_directory == '--All--':
 		if action_type == ActionTypes.Leave and _character_from_directory == '--All--':
@@ -365,7 +371,7 @@ func build_event_editor() -> void:
 			'file_extension' 	: '.dch', 
 			'suggestions_func' 	: get_character_suggestions, 
 			'icon' 				: load("res://addons/dialogic/Editor/Images/Resources/character.svg")})
-	add_header_button('', _on_character_edit_pressed, 'Edit character', ["Edit", "EditorIcons"], 'character != null and _character_from_directory != "--All--"')
+	add_header_button('', _on_character_edit_pressed, 'Edit character', ["ExternalLink", "EditorIcons"], 'character != null and _character_from_directory != "--All--"')
 	
 	add_header_edit('portrait', ValueType.ComplexPicker, '', '', 
 			{'empty_text' 		: 'Default', 

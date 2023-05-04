@@ -1,8 +1,2 @@
-.dropbox.attr
-Thumbs.db
-.import/*
-data/*
-dev/*
-ui/*
-*.import
-Music/AegeanSymphonicOrchestra-SND/AegeanSymphonicOrchestra-SND.sf2
+# Godot 4+ specific ignores
+.godot/

@@ -1,11 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhn8h12nk13a6"]
+[gd_scene load_steps=4 format=3 uid="uid://bhn8h12nk13a6"]
 
 [ext_resource type="Texture2D" uid="uid://c8ba5b3ao6p8p" path="res://Textures/PoorGrass.png" id="1"]
+[ext_resource type="FontFile" uid="uid://y032mddvr064" path="res://Fonts/CandleKeeper 8px Draft.ttf" id="2_evipi"]
+
+[sub_resource type="Theme" id="Theme_ysn1s"]
+default_base_scale = 1.0
+default_font = ExtResource("2_evipi")
+default_font_size = 64
 
 [node name="Node2D" type="Node2D"]
 
 [node name="PoorGrass" type="Sprite2D" parent="."]
-position = Vector2(426, 423)
+position = Vector2(566.718, 287.11)
 rotation = 0.802851
-scale = Vector2(7.48047, 4.70313)
+scale = Vector2(7.48047, 6.23142)
 texture = ExtResource("1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_direction = 2
+layout_mode = 0
+offset_left = 167.0
+offset_top = -234.0
+offset_right = 840.0
+offset_bottom = -81.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_ysn1s")
+theme_override_fonts/normal_font = ExtResource("2_evipi")
+theme_override_font_sizes/normal_font_size = 64
+text = "This is a test"
