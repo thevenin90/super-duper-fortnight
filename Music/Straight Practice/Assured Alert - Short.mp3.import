@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccmdaysjm538c"
+path="res://.godot/imported/Assured Alert - Short.mp3-152398439926be57f27bc1a7d9845876.mp3str"
+
+[deps]
+
+source_file="res://Music/Straight Practice/Assured Alert - Short.mp3"
+dest_files=["res://.godot/imported/Assured Alert - Short.mp3-152398439926be57f27bc1a7d9845876.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

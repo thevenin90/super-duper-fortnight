@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-var midi_player:MidiPlayer
+#var midi_player:MidiPlayer
 @onready var sprLoading:AnimatedSprite2D = get_node("spriteLoading")
 
 # Called when the node enters the scene tree for the first time.
