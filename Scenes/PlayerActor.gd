@@ -1,19 +1,19 @@
-extends KinematicBody2D
-
-onready var sprite : AnimatedSprite = get_node("CharacterSprite")
+class_name PlayerActor
+extends CharacterBody2D
+@onready var sprite: AnimatedSprite2D = get_node("CharacterSprite")
 #onready var textVel : RichTextLabel = get_node("../velocityText")
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var SpeedMax:float = 200.0
-export var SpeedAcc:float = 10.0
-export var SpeedDecel: float = 0.05
+@export var SpeedMax:float = 200.0
+@export var SpeedAcc:float = 10.0
+@export var SpeedDecel: float = 0.05
 
 #var velX:float = 0.0
 #var velY:float = 0.0
 
-var velocity:Vector2 = Vector2()
+var vel:Vector2 = Vector2()
 
 enum Facing {up, down, left, right}
 var f = Facing.right
@@ -23,6 +23,7 @@ var isStartAttack = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	sprite.play("Standing")
 	pass # Replace with function body.
 
 
@@ -32,7 +33,7 @@ func _process(_delta):
 	pass
 
 func get_input(_delta:float ):
-	velocity = Vector2()
+	vel = Vector2()
 	isStartAttack = false 
 	
 	#textVel.text += "velocity.x: " + str(velocity.x)
@@ -45,13 +46,13 @@ func get_input(_delta:float ):
 	
 	if Input.is_action_pressed('control_right'):
 		#velocity.x += SpeedAcc * delta #1
-		velocity.x = SpeedMax
+		vel.x = SpeedMax
 		f = Facing.right
 		sprite.flip_h = false
 		#sprite.rotation = deg2rad(90)
 	elif Input.is_action_pressed('control_left'):
 		#velocity.x -= SpeedAcc * delta #1
-		velocity.x = SpeedMax * -1.0
+		vel.x = SpeedMax * -1.0
 		f = Facing.left
 		sprite.flip_h = true
 		#sprite.scale.
@@ -67,18 +68,21 @@ func get_input(_delta:float ):
 		
 	if Input.is_action_pressed('control_down'):
 		#velocity.y += SpeedAcc * delta #1
-		velocity.y = SpeedMax
+		vel.y = SpeedMax
 		#f = Facing.down
 		#sprite.rotation = deg2rad(180)
 	elif Input.is_action_pressed('control_up'):
 		#velocity.y -= SpeedAcc * delta #1
-		velocity.y = -1.0 * SpeedMax
+		vel.y = -1.0 * SpeedMax
 		#f = Facing.up
 		#sprite.rotation = deg2rad(0)
 	#else:
 	#	velocity.y = abs(velocity.y) / (abs(velocity.y) + (SpeedDecel * delta))
 	
-	velocity = velocity.normalized() * SpeedMax
+	velocity = vel.normalized() * SpeedMax
+	var vx = velocity.x
+	var vy = velocity.y
+	
 	
 	if Input.is_action_pressed("attack_main"):
 		isStartAttack = true
@@ -90,7 +94,9 @@ func _physics_process(delta):
 	#textVel.text = ""
 	get_input(delta)
 	#textVel.text += "\nX: " + str(velocity.x) + "\nY: " + str(velocity.y)
-	velocity = move_and_slide(velocity)
+	var v1 = velocity
+	move_and_slide()
+	var v2 = velocity
 	set_animation()
 	
 func set_animation():
@@ -105,9 +111,14 @@ func set_animation():
 	if isAttacking:
 		return 
 	
+	var vx = velocity.x
+	var vy = velocity.y
+	
 	if velocity == Vector2(0,0):
 		if sprite.animation != "Standing":
 			sprite.animation = "Standing"
+			#var x = sprite.is_playing()
+			
 	else:
 		if sprite.animation != "Walking":
 			sprite.animation = "Walking"

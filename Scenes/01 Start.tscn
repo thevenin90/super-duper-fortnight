@@ -1,20 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhn8h12nk13a6"]
+[gd_scene load_steps=12 format=3 uid="uid://bhn8h12nk13a6"]
 
 [ext_resource type="Texture2D" uid="uid://c8ba5b3ao6p8p" path="res://Textures/PoorGrass.png" id="1"]
 [ext_resource type="FontFile" uid="uid://y032mddvr064" path="res://Fonts/CandleKeeper 8px Draft.ttf" id="2_evipi"]
+[ext_resource type="Texture2D" uid="uid://3esj3k0rt1ft" path="res://Dev/128x128 StoneTile.png" id="3_euj7x"]
+[ext_resource type="PackedScene" uid="uid://c0tv7ji5txtfk" path="res://Scenes/PlayerActor.tscn" id="3_tocjd"]
+[ext_resource type="Texture2D" uid="uid://byo0g1jh3pboi" path="res://Dev/64x128 Stairs.png" id="4_ma3p2"]
+[ext_resource type="Texture2D" uid="uid://cnlf7exobluk2" path="res://Sprites/Background/Path.png" id="5_5f341"]
+[ext_resource type="Texture2D" uid="uid://cuqvqke0sn65h" path="res://Sprites/Background/Rough Tree.png" id="6_lmmh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pw3u"]
+size = Vector2(3200, 900)
 
 [sub_resource type="Theme" id="Theme_ysn1s"]
 default_base_scale = 1.0
 default_font = ExtResource("2_evipi")
 default_font_size = 64
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxjd2"]
+size = Vector2(200, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8t5it"]
+size = Vector2(4000, 200)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="PoorGrass" type="Sprite2D" parent="."]
-position = Vector2(566.718, 287.11)
-rotation = 0.802851
-scale = Vector2(7.48047, 6.23142)
-texture = ExtResource("1")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1600, 450)
+shape = SubResource("RectangleShape2D_0pw3u")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -34,3 +48,250 @@ theme = SubResource("Theme_ysn1s")
 theme_override_fonts/normal_font = ExtResource("2_evipi")
 theme_override_font_sizes/normal_font_size = 64
 text = "This is a test"
+
+[node name="Border" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+position = Vector2(-100, 457)
+shape = SubResource("RectangleShape2D_oxjd2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
+position = Vector2(3300, 450)
+shape = SubResource("RectangleShape2D_oxjd2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
+position = Vector2(1700, -100)
+shape = SubResource("RectangleShape2D_8t5it")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
+position = Vector2(1600, 1000)
+shape = SubResource("RectangleShape2D_8t5it")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="PoorGrass2" type="Sprite2D" parent="Background"]
+position = Vector2(2540, 394)
+rotation = -0.39968
+scale = Vector2(13.6406, 8.30469)
+texture = ExtResource("1")
+
+[node name="PoorGrass" type="Sprite2D" parent="Background"]
+position = Vector2(566.718, 287.11)
+rotation = 0.802851
+scale = Vector2(7.48047, 6.23142)
+texture = ExtResource("1")
+
+[node name="128x128StoneTile7" type="Sprite2D" parent="Background"]
+position = Vector2(3263, 541)
+texture = ExtResource("3_euj7x")
+
+[node name="128x128StoneTile6" type="Sprite2D" parent="Background"]
+position = Vector2(3141, 544)
+texture = ExtResource("3_euj7x")
+
+[node name="64x128Stairs" type="Sprite2D" parent="Background"]
+position = Vector2(3136, 542)
+texture = ExtResource("4_ma3p2")
+
+[node name="128x128StoneTile" type="Sprite2D" parent="Background"]
+position = Vector2(3105, 446)
+texture = ExtResource("3_euj7x")
+
+[node name="128x128StoneTile2" type="Sprite2D" parent="Background"]
+position = Vector2(3040, 509)
+texture = ExtResource("3_euj7x")
+
+[node name="128x128StoneTile3" type="Sprite2D" parent="Background"]
+position = Vector2(3103, 574)
+texture = ExtResource("3_euj7x")
+
+[node name="128x128StoneTile4" type="Sprite2D" parent="Background"]
+position = Vector2(3201, 477)
+texture = ExtResource("3_euj7x")
+
+[node name="128x128StoneTile5" type="Sprite2D" parent="Background"]
+position = Vector2(3199, 604)
+texture = ExtResource("3_euj7x")
+
+[node name="Path" type="Sprite2D" parent="Background"]
+position = Vector2(101.739, 704.242)
+rotation = -1.0472
+scale = Vector2(1.68342, 1)
+texture = ExtResource("5_5f341")
+
+[node name="Path2" type="Sprite2D" parent="Background"]
+position = Vector2(203, 232)
+rotation = -1.57079
+scale = Vector2(2.43342, 1)
+texture = ExtResource("5_5f341")
+
+[node name="RoughTree" type="Sprite2D" parent="Background"]
+position = Vector2(286, 39)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree2" type="Sprite2D" parent="Background"]
+position = Vector2(418, 151)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree" type="Sprite2D" parent="Background/RoughTree2"]
+position = Vector2(195, 116)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree3" type="Sprite2D" parent="Background"]
+position = Vector2(814, 242)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree4" type="Sprite2D" parent="Background"]
+position = Vector2(958, 399)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree5" type="Sprite2D" parent="Background"]
+position = Vector2(1146, 263)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree6" type="Sprite2D" parent="Background"]
+position = Vector2(1308, 171)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree7" type="Sprite2D" parent="Background"]
+position = Vector2(1470, 235)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree8" type="Sprite2D" parent="Background"]
+position = Vector2(1578, 402)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree9" type="Sprite2D" parent="Background"]
+position = Vector2(1698, 586)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree10" type="Sprite2D" parent="Background"]
+position = Vector2(1842, 503)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree11" type="Sprite2D" parent="Background"]
+position = Vector2(2002, 375)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree12" type="Sprite2D" parent="Background"]
+position = Vector2(2203, 221)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree13" type="Sprite2D" parent="Background"]
+position = Vector2(2398, 178)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree14" type="Sprite2D" parent="Background"]
+position = Vector2(2621, 166)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree15" type="Sprite2D" parent="Background"]
+position = Vector2(2851, 190)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree16" type="Sprite2D" parent="Background"]
+position = Vector2(3013, 244)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree17" type="Sprite2D" parent="Background"]
+position = Vector2(3170, 266)
+texture = ExtResource("6_lmmh3")
+
+[node name="Player" parent="." instance=ExtResource("3_tocjd")]
+position = Vector2(177, 198)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Foreground" type="Node" parent="."]
+
+[node name="RoughTree" type="Sprite2D" parent="Foreground"]
+position = Vector2(263, 543)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree2" type="Sprite2D" parent="Foreground"]
+position = Vector2(395, 691)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree3" type="Sprite2D" parent="Foreground"]
+position = Vector2(581, 791)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree4" type="Sprite2D" parent="Foreground"]
+position = Vector2(771, 842)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree5" type="Sprite2D" parent="Foreground"]
+position = Vector2(956, 949)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree6" type="Sprite2D" parent="Foreground"]
+position = Vector2(1139, 955)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree7" type="Sprite2D" parent="Foreground"]
+position = Vector2(1315, 953)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree8" type="Sprite2D" parent="Foreground"]
+position = Vector2(1513, 907)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree9" type="Sprite2D" parent="Foreground"]
+position = Vector2(1711, 908)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree10" type="Sprite2D" parent="Foreground"]
+position = Vector2(1908, 893)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree11" type="Sprite2D" parent="Foreground"]
+position = Vector2(2092, 845)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree12" type="Sprite2D" parent="Foreground"]
+position = Vector2(2302, 842)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree13" type="Sprite2D" parent="Foreground"]
+position = Vector2(2502, 754)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree14" type="Sprite2D" parent="Foreground"]
+position = Vector2(2619, 863)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree15" type="Sprite2D" parent="Foreground"]
+position = Vector2(2829, 839)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree16" type="Sprite2D" parent="Foreground"]
+position = Vector2(3026, 901)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree17" type="Sprite2D" parent="Foreground"]
+position = Vector2(3203, 847)
+texture = ExtResource("6_lmmh3")
+
+[node name="RoughTree18" type="Sprite2D" parent="Foreground"]
+position = Vector2(3291, 714)
+texture = ExtResource("6_lmmh3")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+scale = Vector2(5.86879, -45.4197)
+polygon = PackedVector2Array(38.005, 0.435, 46.36, -3.595, 111.23, -9.115, 149.17, -8.33, 175.881, -12.065, 230.281, -5.965, 292.895, -15.915, 386.36, -7.1, 558.68, -8.77, 570.32, 0.265, 238.36, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2978.0
+offset_top = 369.0
+offset_right = 3311.0
+offset_bottom = 395.0
+text = "Place Ominous looking crypt entrance here"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 149.0
+offset_top = 423.0
+offset_right = 373.0
+offset_bottom = 449.0
+text = "No collision on bottom trees."
